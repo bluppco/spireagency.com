@@ -51,6 +51,10 @@ module.exports = {
 			},
 			fontFamily: {
 
+				"oswald": [ "oswald", "sans-serif" ],
+				"proxima_nova_condensed": [ "proxima-nova-condensed", "sans-serif" ],
+				"proxima_nova": [ "proxima-nova", "sans-serif" ],
+				"roboto": [ "roboto", "sans-serif" ],
 
 			}
 
