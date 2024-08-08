@@ -1,0 +1,65 @@
+---
+
+// IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO ATOMS
+import ParagraphLargeSemiboldWhite from "@/atoms/atoms-nandini/paragraphs/lg/semibold/white/index.astro"
+import ParagraphXlSemiboldWhite from "@/atoms/atoms-nandini/paragraphs/xl/semibold/white/index.astro"
+import Paragraph8xlWhite from "@/atoms/atoms-nandini/paragraphs/8xl/white/index.astro" 
+
+// STATISTICS ARRAY
+const statistics = [
+
+    {
+        number:"75%",
+        title:"percent of B2B creative deemed “ineffective”",
+    },
+    {
+        number:"6.8",
+        title:"average number of stakeholders involved in the B2B purchase",
+    },
+    {
+        number:"57%",
+        title:"how far a B2B buyer is through the purchase cycle before engaging potential suppliers",
+    },
+    {
+        number:"14%",
+        title:"B2B buyers that see a real difference between suppliers AND are willing to pay for it",
+    },
+
+]
+
+// HARDCODED DATA
+const data = {
+
+    title:"LinkedIn | Gartner",
+
+}
+
+---
+<section class="bg-slate-900 py-20">
+    <Container>
+        <div class="space-y-10">
+            <ParagraphXlSemiboldWhite>{ data.title }</ParagraphXlSemiboldWhite>
+            <div class="space-y-10 md:space-y-0 md:grid md:grid-rows-2 md:grid-cols-2 gap-10">
+                {
+
+                    statistics.map( ( item ) =>{
+
+                        return ( 
+
+                                <div class="grid grid-cols-2">                                    
+                                    <Paragraph8xlWhite>{ item.number }</Paragraph8xlWhite>
+                                    <ParagraphLargeSemiboldWhite>{ item.title }</ParagraphLargeSemiboldWhite>
+                                </div>
+
+                        )
+
+                    })
+
+                }
+            </div>
+        </div>
+    </Container>
+</section>
