@@ -57,7 +57,17 @@ const Header = ( { header_data } ) => {
                             </div>
                         </LinkJSX>
                     </div>
-                    <div className="flex flex-col justify-center gap-10 p-16 md:p-28">
+                    <div className="flex flex-col justify-between gap-6 p-6 md:p-16">
+                        <div className="md:hidden">
+                            <LinkJSX href="/">
+                                <div className="h-20 aspect-[2/10]">
+                                    <PictureContainJSX
+                                        alternative_text=""
+                                        source="/logos/spire-black.svg"
+                                    />
+                                </div>
+                            </LinkJSX>
+                        </div>
                         <ul className="flex flex-col gap-6 w-full">
                             {
 
