@@ -47,9 +47,9 @@ const Header = ( { header_data } ) => {
                     <div className="absolute top-5 right-5 cursor-pointer" onClick={ toggleNav }>
                         <IoClose size={40} />
                     </div>
-                    <div className="hidden md:flex items-center justify-center bg-orange-red h-full">
+                    <div className="hidden md:flex items-center justify-center bg-dark-orange h-full">
                         <LinkJSX href="/">
-                            <div className="h-72 aspect-[2/10]">
+                            <div className="h-72 aspect-[1/5]">
                                 <PictureContainJSX
                                     alternative_text=""
                                     source="/logos/spire.svg"
@@ -57,10 +57,10 @@ const Header = ( { header_data } ) => {
                             </div>
                         </LinkJSX>
                     </div>
-                    <div className="flex flex-col justify-between md:justify-center gap-6 p-6 md:p-16">
+                    <div className="flex flex-col md:justify-center gap-12 p-6 md:p-32">
                         <div className="md:hidden">
                             <LinkJSX href="/">
-                                <div className="h-20 aspect-[2/10]">
+                                <div className="h-20 aspect-[1/5]">
                                     <PictureContainJSX
                                         alternative_text=""
                                         source="/logos/spire-black.svg"
