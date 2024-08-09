@@ -47,7 +47,7 @@ module.exports = {
 			},
 			colors: {
 
-				"orange-red": "#d1350f",
+				"dark-orange": "#d1350f",
 
 			},
 			fontFamily: {
