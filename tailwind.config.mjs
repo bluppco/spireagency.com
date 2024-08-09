@@ -26,6 +26,14 @@ module.exports = {
 
 			keyframes: {
 
+				"fade-in": {
+                    "0%": {
+                        opacity: 0.5
+                    },
+                    "100%": {
+                        opacity: 1
+                    },
+                },
 				"accordion-down": {
 
 					from: { height: "0" },
@@ -41,6 +49,7 @@ module.exports = {
       		},
       		animation: {
 
+				"fade-in": 'fade-in 0.5s ease-in-out 0.25s 1',
 				"accordion-down": "accordion-down 0.2s ease-out",
         		"accordion-up": "accordion-up 0.2s ease-out",
 
