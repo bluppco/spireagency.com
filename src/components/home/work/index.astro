@@ -6,6 +6,9 @@ import ContainerSmall from "@/layouts/container-small/index.astro"
 // IMPORT JSX COMPONENTS
 import Accordion from "@/components/home/work/accordion/jsx/index"
 
+// IMPORT ASTRO COMPONENTS
+import WorkCard from "@/components/home/work/card/index.astro"
+
 // IMPORT ASTRO ATOMS
 import ButtonTransparent from "@/atoms/atoms-shiva/buttons/transparent/index.astro"
 import Link from "@/atoms/links/index.astro"
@@ -61,10 +64,56 @@ const links = [
     },
 
 ]
+const card_data = [
+
+    {
+        link: "/",
+        source: "/images/work/card-1.jpg",
+        title: "MORRIS & DICKSON",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-2.jpg",
+        title: "TRINITYRAIL",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-3.jpg",
+        title: "CERVEY",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-4.jpg",
+        title: "AIRBUS",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-5.jpg",
+        title: "SLACK DAVIS SANGER",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-6.jpg",
+        title: "DYNATA",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-7.jpg",
+        title: "TEXAS CAPITAL BANK",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-8.jpg",
+        title: "AVANTAX",
+    },
+
+]
+const card_data_first_half = card_data.slice(0, 5)
+const card_data_second_half = card_data.slice(5, 8)
 
 ---
 
-<section class="bg-slate-800 py-24">
+<section class="flex flex-col gap-20 bg-slate-800 py-24">
     <ContainerSmall>
         <div class="flex flex-col gap-20">
             <div class="flex flex-col gap-10">
@@ -95,4 +144,55 @@ const links = [
             </div>
         </div>   
     </ContainerSmall>
+    <div class="px-4">
+        <div class="hidden lg:flex flex-col gap-4">
+            <div class="grid grid-cols-4 gap-4">
+                {
+
+                    card_data_first_half.map( ( data, index ) => (
+
+                        <div class={ index === 1 ? "col-span-2 row-span-2" : "" }>
+                            <WorkCard
+                                link={ data.link }
+                                source={ data.source }
+                                title={ data.title }
+                            />
+                        </div>
+                        
+                    ))
+        
+                }
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+                {
+
+                    card_data_second_half.map( ( data ) => (
+
+                        <WorkCard
+                            link={ data.link }
+                            source={ data.source }
+                            title={ data.title }
+                        />
+                        
+                    ))
+        
+                }
+            </div>
+        </div>
+        <div class="lg:hidden grid grid-cols-2 gap-4">
+            {
+
+                card_data.map( ( data ) => (
+
+                    <WorkCard
+                        link={ data.link }
+                        source={ data.source }
+                        title={ data.title }
+                    />
+                    
+                ))
+    
+            }
+        </div>
+    </div>
 </section>
