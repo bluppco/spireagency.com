@@ -1,0 +1,198 @@
+---
+
+// IMPORT ASTRO LAYOUTS
+import ContainerSmall from "@/layouts/container-small/index.astro"
+
+// IMPORT JSX COMPONENTS
+import Accordion from "@/components/home/work/accordion/jsx/index"
+
+// IMPORT ASTRO COMPONENTS
+import WorkCard from "@/components/home/work/card/index.astro"
+
+// IMPORT ASTRO ATOMS
+import ButtonTransparent from "@/atoms/atoms-shiva/buttons/transparent/index.astro"
+import Link from "@/atoms/links/index.astro"
+import Paragraph3XlGray from "@/atoms/atoms-shiva/paragraphs/3xl/gray/index.astro"
+import Paragraph3XlWhite from "@/atoms/atoms-shiva/paragraphs/3xl/white/index.astro"
+import Paragraph5XlWhite from "@/atoms/atoms-shiva/paragraphs/5xl/white/index.astro"
+import PictureContain from "@/atoms/picture/internal/contain/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    arrow_source: "/icons/right-arrow.svg",
+    b: "B",
+    bottom_title: "I need Spire’s help with...",
+    button_link: "/",
+    button_text: "LEARN MORE",
+    description: "Spire focuses exclusively on business-to-business advertising and is among the most-awarded B2B agencies in the country. Spire was also named 2023 Agency of the Year by the DFW Chapter of the American Marketing Association.",
+
+}
+const links = [
+
+    {   
+        link: "/",
+        title: "Launching a new product or service",
+    },
+    {   
+        link: "/",
+        title: "Growing my business",
+    },
+    {   
+        link: "/",
+        title: "Improve our brand look and feel",
+    },
+    {   
+        link: "/",
+        title: "Refreshing/rebranding our company",
+    },
+    {   
+        link: "/",
+        title: "Improving marketing planning",
+    },
+    {   
+        link: "/",
+        title: "Implementing digital & social tactics",
+    },
+    {   
+        link: "/",
+        title: "Getting more business leads",
+    },
+    {   
+        link: "/",
+        title: "Increasing our brand presence",
+    },
+
+]
+const card_data = [
+
+    {
+        link: "/",
+        source: "/images/work/card-1.jpg",
+        title: "MORRIS & DICKSON",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-2.jpg",
+        title: "TRINITYRAIL",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-3.jpg",
+        title: "CERVEY",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-4.jpg",
+        title: "AIRBUS",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-5.jpg",
+        title: "SLACK DAVIS SANGER",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-6.jpg",
+        title: "DYNATA",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-7.jpg",
+        title: "TEXAS CAPITAL BANK",
+    },
+    {
+        link: "/",
+        source: "/images/work/card-8.jpg",
+        title: "AVANTAX",
+    },
+
+]
+const card_data_first_half = card_data.slice(0, 5)
+const card_data_second_half = card_data.slice(5, 8)
+
+---
+
+<section class="flex flex-col gap-20 bg-slate-800 py-24">
+    <ContainerSmall>
+        <div class="flex flex-col gap-20">
+            <div class="flex flex-col gap-10">
+                <Paragraph3XlWhite>{ data.description }</Paragraph3XlWhite>
+                <div class="flex gap-8 justify-between items-center">
+                    <Paragraph5XlWhite>{ data.b }</Paragraph5XlWhite>
+                    <div class="w-full aspect-[20/1]">
+                        <PictureContain
+                            alternative_text=""
+                            source={ data.arrow_source }
+                        />                                                            
+                    </div>
+                    <Paragraph5XlWhite>{ data.b }</Paragraph5XlWhite>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2">
+                <Paragraph3XlGray>{ data.bottom_title }</Paragraph3XlGray>
+                <div class="flex flex-col justify-between md:flex-row items-center gap-8">
+                    <Accordion 
+                        client:load
+                        links={ links }
+                        title="Launching a new product or service" 
+                    />
+                    <Link href={ data.button_link }>
+                        <ButtonTransparent>{ data.button_text }</ButtonTransparent>
+                    </Link>
+                </div>
+            </div>
+        </div>   
+    </ContainerSmall>
+    <div class="px-4">
+        <div class="hidden lg:flex flex-col gap-4">
+            <div class="grid grid-cols-4 gap-4">
+                {
+
+                    card_data_first_half.map( ( data, index ) => (
+
+                        <div class={ index === 1 ? "col-span-2 row-span-2" : "" }>
+                            <WorkCard
+                                link={ data.link }
+                                source={ data.source }
+                                title={ data.title }
+                            />
+                        </div>
+                        
+                    ))
+        
+                }
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+                {
+
+                    card_data_second_half.map( ( data ) => (
+
+                        <WorkCard
+                            link={ data.link }
+                            source={ data.source }
+                            title={ data.title }
+                        />
+                        
+                    ))
+        
+                }
+            </div>
+        </div>
+        <div class="lg:hidden grid grid-cols-2 gap-4">
+            {
+
+                card_data.map( ( data ) => (
+
+                    <WorkCard
+                        link={ data.link }
+                        source={ data.source }
+                        title={ data.title }
+                    />
+                    
+                ))
+    
+            }
+        </div>
+    </div>
+</section>
