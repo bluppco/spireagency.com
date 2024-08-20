@@ -1,0 +1,22 @@
+---
+
+// IMPORT ASTRO ATOMS
+import Video from "@/atoms/atoms-shiva/video/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    poster: "/images/spire-hero-bg.jpg",
+    source: "/videos/spire-hero.mp4",
+
+}
+
+---
+
+<section class="relative h-dvh">
+    <div class="absolute inset-0 -z-10">
+        <Video poster={ data.poster }>
+            <source src={ data.source } type="video/mp4">
+        </Video>
+    </div>
+</section>

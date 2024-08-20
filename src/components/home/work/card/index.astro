@@ -1,0 +1,32 @@
+---
+
+// IMPORT ASTRO ATOMS
+import Link from "@/atoms/links/index.astro"
+import ParagraphXlWhite from "@/atoms/atoms-shiva/paragraphs/xl/white/index.astro"
+import PictureCover from "@/atoms/picture/internal/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    link,
+    source,
+    title,
+
+} = Astro.props
+
+---
+
+<Link href={ link }>
+    <div class="relative aspect-square group overflow-hidden">
+        <div class="absolute inset-0 w-full h-full z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
+            <ParagraphXlWhite>{ title }</ParagraphXlWhite>
+        </div>
+        <div class="absolute inset-0 w-full aspect-square group-hover:scale-110 duration-300">
+            <PictureCover
+                alternative_text=""
+                source={ source }
+            />
+        </div>
+        <div class="hidden group-hover:block duration-300 absolute inset-0 w-full h-full bg-dark-orange bg-opacity-50" />
+    </div>
+</Link>
