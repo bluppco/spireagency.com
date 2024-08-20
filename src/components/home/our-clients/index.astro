@@ -1,0 +1,321 @@
+---
+
+// IMPORT JSX COMPONENTS
+import ClientCarousel from "@/components/home/our-clients/jsx/index.jsx"
+
+// IMPORT ASTRO ATOMS
+import HeadingTwo3xlCenter from "@/atoms/atoms-nandini/headings/two/3xl/center/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// CLIENTS ARRAY
+const clients = [
+
+    {
+        alternative_text:"Image",
+        source:"/images/clients/client-1.png",
+    },
+    {
+        alternative_text:"Image",
+        source:"/images/clients/client-2.png",
+    },
+    {
+        alternative_text:"Image",
+        source:"/images/clients/client-3.png",
+    },
+    {
+        alternative_text:"Image",
+        source:"/images/clients/client-4.png",
+    },
+    {
+        alternative_text:"Image",
+        source:"/images/clients/client-5.png",
+    },
+    {
+        alternative_text:"Image",
+        source:"/images/clients/client-6.png",
+    },
+    {
+        alternative_text:"Image",
+        source:"/images/clients/client-7.png",
+    },
+    {
+        alternative_text:"Image",
+        source:"/images/clients/client-8.png",
+    },
+
+]
+
+// HARDCODED DATA
+const data = {
+
+    title:"Our clients",
+
+}
+
+---
+<section class="my-20">
+    <div class="space-y-10">
+        <HeadingTwo3xlCenter>{ data.title }</HeadingTwo3xlCenter>
+        <div class="flex overflow-hidden lg:mx-20">
+            <div class="flex gap-10 animate-loop-scroll">
+                {
+
+                    clients.map( ( item , index ) =>{
+
+                        if ( index == 4 || index == 5 || index == 7){
+
+                            return ( 
+
+                                    <div>
+                                        <div class="h-20 aspect-[2/1]">
+                                            <PictureInternal 
+                                                alternative_text={ item.alternative_text }
+                                                source={ item.source }
+                                            />
+                                        </div>
+                                    </div>
+
+                        )
+ 
+                        } else {
+
+                            return ( 
+
+                                    <div>
+                                        <div class="h-20 aspect-[4/1]">
+                                            <PictureInternal 
+                                                alternative_text={ item.alternative_text }
+                                                source={ item.source }
+                                            />
+                                        </div>
+                                    </div>
+                                    
+                            )
+
+                        }
+
+                        
+
+                    })
+
+                }
+                <div class="h-20 aspect-[4/1]">
+                    <PictureInternal 
+                        alternative_text=""
+                        source="./public/images/clients/client-1.png"
+                    />
+                </div>
+                <div class="h-20 aspect-[4/1]">
+                    <PictureInternal 
+                        alternative_text=""
+                        source="./public/images/clients/client-2.png"
+                    />
+                </div>
+                <div class="h-20 aspect-[4/1]">
+                    <PictureInternal 
+                        alternative_text=""
+                        source="./public/images/clients/client-3.png"
+                    />
+                </div>
+                <div class="h-20 aspect-[4/1]">
+                    <PictureInternal 
+                        alternative_text=""
+                        source="./public/images/clients/client-4.png"
+                    />
+                </div>
+                <div class="h-20 aspect-[2/1]">
+                    <PictureInternal 
+                        alternative_text=""
+                        source="./public/images/clients/client-5.png"
+                    />
+                </div>
+                <div class="h-20 aspect-[2/1]">
+                    <PictureInternal 
+                        alternative_text=""
+                        source="./public/images/clients/client-6.png"
+                    />
+                </div>
+                <div class="h-20 aspect-[4/1]">
+                    <PictureInternal 
+                        alternative_text=""
+                        source="./public/images/clients/client-7.png"
+                    />
+                </div>
+            </div>
+            <div class="inline-block">
+                <div class="flex gap-10 animate-loop-scroll">
+                    {
+    
+                        clients.map( ( item , index ) =>{
+    
+                            if ( index == 4 || index == 5 || index == 7){
+    
+                                return ( 
+    
+                                        <div>
+                                            <div class="h-20 aspect-[2/1]">
+                                                <PictureInternal 
+                                                    alternative_text={ item.alternative_text }
+                                                    source={ item.source }
+                                                />
+                                            </div>
+                                        </div>
+    
+                            )
+     
+                            } else {
+    
+                                return ( 
+    
+                                        <div>
+                                            <div class="h-20 aspect-[4/1]">
+                                                <PictureInternal 
+                                                    alternative_text={ item.alternative_text }
+                                                    source={ item.source }
+                                                />
+                                            </div>
+                                        </div>
+                                        
+                                )
+    
+                            }
+    
+                            
+    
+                        })
+    
+                    }
+                    <div class="h-20 aspect-[4/1]">
+                        <PictureInternal 
+                            alternative_text=""
+                            source="./public/images/clients/client-1.png"
+                        />
+                    </div>
+                    <div class="h-20 aspect-[4/1]">
+                        <PictureInternal 
+                            alternative_text=""
+                            source="./public/images/clients/client-2.png"
+                        />
+                    </div>
+                    <div class="h-20 aspect-[4/1]">
+                        <PictureInternal 
+                            alternative_text=""
+                            source="./public/images/clients/client-3.png"
+                        />
+                    </div>
+                    <div class="h-20 aspect-[4/1]">
+                        <PictureInternal 
+                            alternative_text=""
+                            source="./public/images/clients/client-4.png"
+                        />
+                    </div>
+                    <div class="h-20 aspect-[2/1]">
+                        <PictureInternal 
+                            alternative_text=""
+                            source="./public/images/clients/client-5.png"
+                        />
+                    </div>
+                    <div class="h-20 aspect-[2/1]">
+                        <PictureInternal 
+                            alternative_text=""
+                            source="./public/images/clients/client-6.png"
+                        />
+                    </div>
+                    <div class="h-20 aspect-[4/1]">
+                        <PictureInternal 
+                            alternative_text=""
+                            source="./public/images/clients/client-7.png"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-20 sm:pt-28 md:pt-48">
+            <div class="flex justify-center">
+                <div class="size-14">
+                    <PictureInternal
+                        alternative_text="Icon"
+                        source="/icons/quotation.svg"
+                    />
+                </div>
+            </div>
+            <ClientCarousel client:load/>
+        </div>
+
+    </div>
+</section>
+
+<!-- Create carousel with react slick -->
+
+
+<!-- <script >
+    // SLICK SLIDER FUNCTION FOR RESPONSIVE CAROUSAL
+    document.addEventListener('DOMContentLoaded', function() {
+        $('.testimonial_slider').slick({
+            // DOT BUTTONS BELOW THE CAROUSAL ACTIVE
+            dots: true,
+
+            // PREVIOUS ARROW BUTTON DISABLED
+            prevArrow: false,
+
+            // NEXT ARROW BUTTON DISABLED
+            nextArrow: false,
+
+            // INFINITELY SCROLLING
+            infinite: true,
+
+            // SPEED OF SCROLLING
+            speed: 300,
+
+            // SLIDES TO SHOW FOR DIFFERENT WINDOWS
+            slidesToShow: 3,
+
+            // SLIDES TO SCROLL EVERYTIME WE SCROLL
+            slidesToScroll: 2,
+
+            // ENABLE CENTER MODE FOR NEXT SLIDES TO PEAK
+            centerMode: true, 
+
+            // HOW MUCH THE NEX SLIDES PEAK
+            centerPadding: '110px',
+            responsive: [
+                {
+                    // DESIGN OF SLIDES FOR BELOW 1024
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true,
+                        centerMode: false,
+                }
+                },
+                {
+                    // DESIGN OF SLIDES FOR BELOW 640
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false
+                }
+                },
+                {
+                    // DESIGN OF SLIDES FOR BELOW 480
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false
+                }
+                }
+            ]
+        });
+    });
+</script> -->
+
+
+<!-- "loop-scroll": "loop-scroll 25s linear infinite",
+"loop-scroll": {
+    "from": { transform: "translateX(0)" },
+    "to": { transform: "translateX(-100%)" },
+}, -->
