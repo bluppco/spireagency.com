@@ -1,0 +1,31 @@
+---
+
+// IMPORT ASTRO LAYOUTS
+import ContainerSmall from "@/layouts/container-small/index.astro"
+
+// IMPORT ASTRO PROPS
+import ButtonRed from "@/atoms/atoms-shiva/buttons/red/index.astro"
+import HeadingTwo3XlCenter from "@/atoms/atoms-shiva/headings/two/3xl/center/index.astro"
+import Link from "@/atoms/links/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    button_link: "/",
+    button_text: "CONTACT US",
+    title: "Enough chitchat. Let’s get to work."
+
+}
+
+---
+
+<section class="py-24">
+    <ContainerSmall>
+        <div class="grid grid-cols-1 md:grid-cols-2 place-items-center gap-10">
+            <HeadingTwo3XlCenter>{ data.title }</HeadingTwo3XlCenter>
+            <Link href={ data.button_link }>
+                <ButtonRed>{ data.button_text }</ButtonRed>
+            </Link>
+        </div>
+    </ContainerSmall>
+</section>

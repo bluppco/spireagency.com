@@ -61,6 +61,7 @@ module.exports = {
 			},
 			colors: {
 
+				"dark-orange": "#d1350f",
 
 			},
 			fontFamily: {
