@@ -11,8 +11,8 @@ import "swiper/css/navigation"
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 
-// IMPORT JSX ATOMS
-// import PictureContain from "@/atoms/picture/internal/contain/jsx"
+// IMPORT ASTRO ATOMS
+import ParagraphCenter from "@/atoms/atoms-nandini/paragraphs/center/index.astro"
 
 // HARDCODED DATA
 const clients = [
