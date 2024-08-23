@@ -12,7 +12,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 
 // IMPORT ASTRO ATOMS
-import ParagraphCenter from "@/atoms/atoms-nandini/paragraphs/center/index.astro"
+import ParagraphCenter from "@/atoms/atoms-nandini/paragraphs/center/index.jsx"
+import ParagraphSmallCenter from "@/atoms/atoms-nandini/paragraphs/center/sm/index.jsx"
 
 // HARDCODED DATA
 const clients = [
@@ -68,8 +69,8 @@ const client = () => {
 
                         <SwiperSlide>
                             <div className="space-y-4 mx-10 sm:mx-20 md:mx-52 xl:mx-80 mb-10">
-                                <p className="text-center font-proxima_nova">{ item.description }</p>
-                                <p className="text-center text-sm font-roboto">{ item.client }</p>
+                                <ParagraphCenter>{ item.description }</ParagraphCenter>
+                                <ParagraphSmallCenter>{ item.client }</ParagraphSmallCenter>
                             </div>
                         </SwiperSlide>
 
